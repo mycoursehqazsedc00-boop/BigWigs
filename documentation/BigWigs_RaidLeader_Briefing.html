@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BigWigs 30141 - Raid Leader Briefing &amp; Advisory</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 12mm 14mm;
+    @bottom-right {
+      content: "Page " counter(page) " of 2";
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #0f172a;
+    background-color: #ffffff;
+    line-height: 1.4;
+    font-size: 11.5px;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Header Banner */
+  .header-card {
+    border: 1px solid #cbd5e1;
+    border-top: 5px solid #b91c1c;
+    border-radius: 6px;
+    padding: 12px 16px;
+    background: linear-gradient(180deg, #fef2f2 0%, #f8fafc 100%);
+    margin-bottom: 12px;
+  }
+
+  .header-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #b91c1c;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .header-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #1e1b4b;
+    margin: 0 0 2px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .header-subtitle {
+    font-size: 11.5px;
+    color: #475569;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meta-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .meta-val {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  h2 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 3px;
+    margin: 12px 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  p {
+    margin: 0 0 6px 0;
+  }
+
+  /* Callout Alerts */
+  .alert {
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 11px;
+  }
+
+  .alert-critical {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+  }
+
+  .alert-success {
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    color: #166534;
+  }
+
+  .alert-info {
+    background-color: #f0f9ff;
+    border-left: 4px solid #0284c7;
+    color: #075985;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 10px 0;
+    font-size: 10.5px;
+  }
+
+  th, td {
+    padding: 5px 8px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 700;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 8.5px;
+    font-weight: 700;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .badge-fixed { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+  .badge-bug { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .card {
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 8px 10px;
+    background: #ffffff;
+  }
+
+  .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 3px;
+  }
+
+  code {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 10px;
+    border: 1px solid #e2e8f0;
+  }
+
+  ul, ol {
+    margin: 3px 0 6px 16px;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 2px;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER / TITLE -->
+  <div class="header-card">
+    <div class="header-tag">Raid Leader Advisory &amp; Technical Update</div>
+    <div class="header-title">BigWigs 30141: Nefarian Class Call Fixes &amp; Raid Guidance</div>
+    <div class="header-subtitle">Urgent operational briefing regarding Nefarian encounter mechanics, dual class calls, and raid leader procedures.</div>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="meta-label">Addon Version</span>
+        <span class="meta-val">30141 (Fork: Pepo)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Commit Reference</span>
+        <span class="meta-val">3e1a711 (Master)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Incident Origin</span>
+        <span class="meta-val">Pysanka (Priest Healer Feedback)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Encounter Area</span>
+        <span class="meta-val">Blackwing Lair &mdash; Nefarian</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: EXECUTIVE SUMMARY OF THE BUG -->
+  <h2>1. Incident Report &amp; Root Cause Analysis</h2>
+  <div class="alert alert-critical">
+    <strong>The Problem in Previous Raid (Why Pysanka &amp; Healers Alerted Us):</strong><br>
+    During the September 4 raid, healers and raiders experienced <strong>complete silence</strong> during Nefarian class calls: zero audio alerts ("Beware"), zero on-screen warning signs, zero raid chat messages, and zero timer bars.
+  </div>
+
+  <p>
+    In commit <code>8ecaa3a</code>, support for Turtle WoW 1.18.1 dual class calls was introduced using two sequential sync channels (<code>classCallA</code> and <code>classCallB</code>). 
+    However, the handler for <code>classCallA</code> was programmed only to record <code>classA = rest</code> and <strong>deferred all alerts until <code>classCallB</code> arrived</strong>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Encounter Scenario</th>
+        <th style="width: 35%;">Flawed 30141 Behavior (Prior)</th>
+        <th style="width: 40%;">Fixed 30141 Behavior (Commit 3e1a711)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Single Class Call</strong><br><span style="font-size:9.5px; color:#64748b;">(e.g., Priests alone @ 22:22:13, Shamans alone @ 22:21:16)</span></td>
+        <td><span class="badge badge-bug">SILENT FAILURE</span><br><code>classCallB</code> never arrives. Addon produces zero sound, zero warning sign, zero timer bar. Healers continued direct heals, triggering raid wipes via Corrupted Healing.</td>
+        <td><span class="badge badge-fixed">IMMEDIATE 0ms ALERT</span><br>Plays "Beware", shows personal <code>WarningSign</code>, posts raid chat message, and launches 30s <code>&lt;Class&gt; Class Call</code> bar immediately on first yell.</td>
+      </tr>
+      <tr>
+        <td><strong>Dual Class Call</strong><br><span style="font-size:9.5px; color:#64748b;">(e.g., Priest + Druid @ 22:20:42, Warrior + Warlock @ 22:10:10)</span></td>
+        <td><span class="badge badge-bug">RACE CONDITION</span><br>Class A was delayed until Class B arrived. If Class B packet was throttled or dropped over addon comms, both calls were completely lost.</td>
+        <td><span class="badge badge-fixed">SEAMLESS UPGRADE</span><br>Class A fires instantly. When Class B arrives within 4s, active timer bar seamlessly upgrades to <code>&lt;Class 1&gt; &amp; &lt;Class 2&gt; Class Call</code> for remaining duration.</td>
+      </tr>
+      <tr>
+        <td><strong>Network Comm Throttling</strong><br><span style="font-size:9.5px; color:#64748b;">(2 yells occurring within 0.2s)</span></td>
+        <td><span class="badge badge-bug">PACKET COLLISION</span><br>BigWigs <code>Comm.lua</code> throttled by root token. Second yell was dropped by the addon comm throttle.</td>
+        <td><span class="badge badge-fixed">PER-CLASS COMM TOKENS</span><br>9 independent sync channels (<code>NefCall&lt;Class&gt;30141</code>). Class 1 and Class 2 never collide or throttle each other.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 2: RAID LEADER & CLASS LEAD INSTRUCTIONS -->
+  <h2>2. Class-Specific Tactical Directives for the Raid</h2>
+  <div class="grid-2">
+    <div class="card" style="border-left: 3px solid #0284c7;">
+      <div class="card-title">PRIESTS &mdash; Corrupted Healing (CRITICAL)</div>
+      <p style="font-size: 10px; margin-bottom: 3px;">Direct heals apply a massive stacking Shadow DoT to the target instead of healing.</p>
+      <ul style="font-size: 10px;">
+        <li><strong>Authorized Spells:</strong> <code>Renew</code> and <code>Power Word: Shield</code> ONLY!</li>
+        <li><strong>Forbidden Spells:</strong> Cancel any in-flight Flash Heal or Greater Heal immediately.</li>
+        <li><strong>BigWigs Alert:</strong> Loud "Beware" horn + flashing Renew icon + "YOUR CLASS CALL".</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-left: 3px solid #b91c1c;">
+      <div class="card-title">WARRIORS &mdash; Berserker Stance Lock</div>
+      <p style="font-size: 10px; margin-bottom: 3px;">All warriors forced into Berserker Stance, taking +20% increased damage.</p>
+      <ul style="font-size: 10px;">
+        <li><strong>Tank Action:</strong> Main Tank takes 20% more damage. Prepare defensive cooldowns (Shield Wall, Last Stand).</li>
+        <li><strong>Healer Action:</strong> Pre-shield MT and maintain maximum HoT coverage.</li>
+        <li><strong>BigWigs Alert:</strong> Automatic stance alert + Berserker icon warning.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-left: 3px solid #16a34a;">
+      <div class="card-title">DRUIDS &mdash; Cat Form Lock</div>
+      <p style="font-size: 10px; margin-bottom: 3px;">Druids afflicted by <code>Involuntary Transformation</code>, locked in Cat Form for 30s.</p>
+      <ul style="font-size: 10px;">
+        <li>Resto Druids cannot heal. Feral tanks lose Bear armor/health pool.</li>
+        <li>DPS cats must watch threat closely to avoid pulling Nefarian.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-left: 3px solid #d97706;">
+      <div class="card-title">SHAMANS &mdash; Corrupted Totems</div>
+      <p style="font-size: 10px; margin-bottom: 3px;">Shamans drop hostile Corrupted Stoneskin and Healing Stream Totems.</p>
+      <ul style="font-size: 10px;">
+        <li>Hostile totems grant huge buffs/heals to Nefarian and Bone Constructs.</li>
+        <li><strong>Action:</strong> Melee and hunters must tab-target and kill all Corrupted Totems.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 3: OTHER BWL 1.18.1 CALIBRATIONS IN 30141 -->
+  <h2>3. Blackwing Lair &amp; TMH Engine Calibrations in BigWigs 30141</h2>
+  <p>In addition to the Nefarian Class Call overhaul, BigWigs 30141 includes extensive calibrations grounded in real raid telemetry:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">Boss Encounter</th>
+        <th style="width: 38%;">Mechanic &amp; Calibrated Timing</th>
+        <th style="width: 40%;">Raid Advantage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Nefarian</strong><br><em>Bellowing Roar (Fear)</em></td>
+        <td><strong>Calibrated <code>fearCd = 26.5s</code></strong><br>(Pre-warning at 23.0s; empirical average 28.2s in 9/4 log)</td>
+        <td>Eliminates Golden 30140's premature 23.5s bar. Tanks will no longer waste Berserker Rage 3&ndash;6 seconds too early.</td>
+      </tr>
+      <tr>
+        <td><strong>Broodlord Lashlayer</strong><br><em>Mortal Strike &amp; Bleed</em></td>
+        <td><strong>Calibrated <code>msFirstCd = 30s</code></strong><br>Added Serrated Wound bleed duration alert.</td>
+        <td>Healers receive accurate MS cooldown timers and debuff expiration warnings on tanks.</td>
+      </tr>
+      <tr>
+        <td><strong>Razorgore the Untamed</strong><br><em>Phase 1 Egg Counter</em></td>
+        <td><strong>Calibrated <code>eggsTotal = 20</code></strong><br>(Turtle WoW 1.18.1 standard)</td>
+        <td>Egg counter reaches 100% completion at 20 eggs instead of stalling at 20/30.</td>
+      </tr>
+      <tr>
+        <td><strong>Ezzel Darkbrewer</strong><br><em>New BWL Alchemist Boss</em></td>
+        <td><strong>Ton'Raka Charge Raid Marking (Triangle)</strong><br>Pillar collision DR cancellation &amp; dynamic 1.6x Curse of Tongues cast scaling (12.8s wipe bar).</td>
+        <td>Charged players automatically marked and warned to bait boss into pillars; wipe cast accurately timed with CoT.</td>
+      </tr>
+      <tr>
+        <td><strong>Selenaxx Foulheart</strong><br><em>Timbermaw Hold (TMH)</em></td>
+        <td><strong>Rain of Destruction "MOVE" Warning</strong><br>Real-time tick warnings and enrage countdowns.</td>
+        <td>Prevents avoidable raid fire damage in Timbermaw Hold trash and boss encounters.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4: RAID LEADER ACTION CHECKLIST -->
+  <h2>4. Raid Leader Action Checklist (Pre-Raid Briefing)</h2>
+  <div class="alert alert-info">
+    <strong>Mandatory Pre-Raid Verification Steps:</strong>
+  </div>
+
+  <ol>
+    <li>
+      <strong>Enforce Raid Addon Updates:</strong><br>
+      Ask all raiders to ensure they have updated to <strong>BigWigs Revision 30141 (Master commit <code>3e1a711</code>)</strong>.<br>
+      To audit the raid in-game, type:
+      <br>
+      <code>/bw version</code> &nbsp;or&nbsp; <code>/bw versionquery</code>
+      <br>
+      <em>Raiders on older revisions (30140 or earlier 30141 commits) will show in red/yellow and should update immediately to share the new per-class comm channels.</em>
+    </li>
+    <li>
+      <strong>Priest Healer Profile Optimization:</strong><br>
+      Priest healers should execute the built-in profile command for optimized bar positioning and emphasis:
+      <br>
+      <code>/bw priest</code>
+      <br>
+      <em>This arranges Class Call, Corrupted Healing, and Mind Control bars directly in primary healer eye-line.</em>
+    </li>
+    <li>
+      <strong>In-Game Dry Run Test:</strong><br>
+      The Raid Leader or any officer can test the full Nefarian encounter flow (all 3 phases, single class call, and dual class call transition) by running:
+      <br>
+      <code>/run BigWigs:GetModule("Nefarian"):Test()</code>
+      <br>
+      <em>This executes a 40-second simulation displaying all timers, warning signs, audio cues, and bar transitions without engaging the actual boss.</em>
+    </li>
+    <li>
+      <strong>Passive Backup Assurance:</strong><br>
+      Even if a raider has monster yell chat muted or is out of yell range, BigWigs 30141 now actively inspects combat log debuffs (<code>Involuntary Transformation</code>, <code>Corrupted Healing</code>, <code>Berserk</code>). The class call will trigger automatically on the first tick!
+    </li>
+  </ol>
+
+  <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #cbd5e1; display: flex; justify-content: space-between; font-size: 9.5px; color: #64748b;">
+    <span>BigWigs 30141 &bull; Fork: Pepo &bull; Maintained by prodigeomix</span>
+    <span>Document Generated: September 5, 2026 &bull; Status: Production Verified</span>
+  </div>
+
