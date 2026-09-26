@@ -4,12 +4,7 @@ Patch on top of the Turtle WoW [`pepopo978/BigWigs`](https://github.com/pepopo97
 
 Everything below was found by static code review of this repo, not by profiling in a live client. Where a fix could be tested outside the game (pure-Lua logic), it was simulated/unit-tested under Lua 5.1 and the result is noted. **FPS numbers reported by players are the real validation** — see [Testing](#testing) below.
 
-## Install
 
-```
-git apply --ignore-whitespace BigWigs-fps-fixes.patch
-```
-from the addon's root folder. Files are CRLF. Alternatively, copy the files from `BigWigs-fps-patched-files.zip` over your existing install.
 
 ## Client mods considered
 
